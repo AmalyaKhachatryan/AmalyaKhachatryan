@@ -1,0 +1,44 @@
+<div class="container">
+
+
+    <div class="myaccount"> My account</div>
+    <div class="signinregisterbtns">
+        <button class="btn" (click)="signinfunc() ">Sign in</button>
+        <button class="btn" routerLink="/register"> Register</button>
+    </div> <br>
+
+    <div class="inputssdiv" [formGroup]="profileForm">
+        <div class="emaildiv">
+            <div class="icon">
+                <img src="../../../assets/Icon color.png" alt="" (click)="deletei()">
+            </div>
+
+            <div class="emailimput"> <input type="email" name="email" placeholder="Email*" class="inputs"
+                    formControlName="email"> </div>
+            <!-- <div *ngIf="profileForm.get('email')?.hasError('required')" class="required"> Email is required. </div> -->
+
+        </div> <br>
+
+        <input type="password" placeholder="Password*" class="inputs" formControlName="password">
+        <!-- <div *ngIf="profileForm.get('password')?.hasError('required')" class="required">Password is required.</div> -->
+
+
+
+        <!-- <div *ngIf=" profileForm.value.password==='INVALID'" class="required"> Password incorrect!</div> -->
+      
+
+        <br>
+
+        <input type="checkbox" class="check" formControlName="checkbox"> <br><br>
+
+
+        <div *ngIf="profileForm.status==='INVALID'" class="required"> Complete the form to enable button</div>
+
+
+        <button type="submit" [disabled]="!profileForm.valid" class="btn btn-dark btnsignin" (click)="signinfunc()"
+            (click)="saveData()">SIGN
+            IN</button> <br>
+        <div class="forgottenpass" routerLink="/resetpassword">Have you forgotten your password?</div>
+
+    </div>
+</div>

@@ -1,0 +1,168 @@
+@import "../colors.scss";
+
+
+.info {
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+    z-index: 2;
+    display: flex;
+    margin-bottom: 30vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.price {
+    margin-top: 5vh;
+    font-size: 25px;
+}
+
+.btn {
+    margin-top: 7vh;
+    border: solid 2px;
+    border-color: white;
+    color: white;
+    width: 193px;
+}
+
+.name {
+    color: white;
+    font-size: 33px;
+}
+
+
+
+.carousel-indicators {
+    bottom: 18px;
+}
+
+.dot{
+    margin-left: 1vh;
+    opacity: 0.5;
+
+}
+
+.active.dot{
+    opacity: 1;
+}
+
+.shop {
+    display: flex;
+    flex-direction: row;
+    margin-top: 3vh;
+    align-items: baseline;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 33px;
+   
+}
+
+.buttonViewall {
+    border: none;
+    background-color: transparent;
+    color: $accent;
+    font-size: 20px;
+    border: solid 2px;
+    border-color: white;
+    border-radius: 3px;
+}
+
+
+.card {
+    border: none;
+    margin-top: 2vh;
+    position: relative;
+  
+}
+
+.card:hover{
+    opacity: 0.7;
+}
+
+
+.hoveicons {
+    height: 247px;
+    width: 246px;
+    position: absolute;
+    opacity: 0;
+    padding-left: 33%;
+    padding-top: 40%;
+}
+
+.bi {
+    margin-left: 2vh;
+}
+
+.bi-heart{
+    overflow: visible;
+
+}
+
+.hoveicons:hover {
+    opacity: 1;
+}
+
+.discount {
+    position: absolute;
+    background-color: $accent;
+    font-size: 12px;
+    text-align: center;
+    top: 5px;
+    border-radius: 10%;
+    margin-left: 5px;
+    padding: 5px;
+    color: white;
+
+}
+
+@media only screen and (max-width: 768px) {
+    .info {
+        margin-bottom: 4vh;
+    }
+
+    .price {
+        margin-top: 1vh;
+        font-size: 14px;
+    }
+
+    .btn {
+        margin-top: 1vh;
+        width: 100px;
+        font-size: 12px;
+    }
+
+    .name {
+        font-size: 20px;
+    }
+
+
+    .carousel-indicators {
+        bottom: 5px;
+    }
+
+    .dots {
+        & #dot {
+            width: 6px;
+            height: 6px;
+            margin: 5px;
+        }
+    }
+
+    .shop {
+        font-size: 16px;
+    }
+
+    
+.hoveicons {
+    padding-left: 28%;
+  
+}
+}
+
+
+
+@media only screen and (max-width: 400px) {
+    .hoveicons {
+        padding-left: 10%;
+        
+    }}

@@ -1,0 +1,147 @@
+<div class="container">
+    <div class="checkout">Checkout</div>
+    <div class="linktexsts">Returning customer? <span id="clickhere" routerLink="/myaccount">Click here to login </span></div>
+    <div class="linktexsts">Have a cupon? <span id="clickhere" >Click here to enter your code </span> </div>
+
+    <div class="coupondiv">
+        <div class="linktexsts">If you have a coupon code, please apply it below.</div>
+        <input type="text" class="cupinput" placeholder="Coupon Code">
+        <button type="submit" class="btn btn-dark btnsignin">APPLY COUPON</button>
+    </div>
+
+
+    <div class="buttomsections">
+        <div class="buillingdetailsdiv">
+            <div class="buillingdetails">Billing Details</div>
+
+            <div [formGroup]="adressForm">
+                <div class="inputs">
+                    <div> <input type="text" formControlName="firstName" class="namesinputs" placeholder="First name*">
+                    </div>
+                    <div><input type="text" formControlName="lastName" class="namesinputs" placeholder="last name*">
+                    </div>
+                </div> <br>
+
+                <div>
+                    <input type="text" formControlName="companyName" placeholder="Company Name*" class="allimputs">
+                </div> <br>
+
+                <div class="country" >
+                    <select class="allimputs" name="country" id="country">
+                        <option value="" disabled selected class="country">Country*</option>
+                        <option *ngFor="let country of countries" [value]="country.name" >{{country.name}} </option>
+                    </select>
+                </div> <br>
+
+                <div>
+                    <input type="text" formControlName="streetAdress" placeholder="Street Address*" class="allimputs">
+                </div> <br>
+
+                <div> <input type="text" formControlName="postcode" placeholder="Postcode / ZIP*" class="allimputs">
+                </div>
+                <br>
+
+                <div>
+                    <input type="text" formControlName="town" placeholder="Town / City*" class="allimputs">
+                </div> <br>
+
+                <div>
+                    <input type="text" formControlName="phone" placeholder="Phone*" class="allimputs">
+                </div> <br>
+
+                <div>
+                    <input type="text" formControlName="email" placeholder="Email*" class="allimputs">
+                </div> <br>
+
+                <div class="checkboxdivs">
+                    <input type="checkbox" formControlName="checkbox1" class="checkboxinput">
+                    <div class="checkboxtext">Create an account ?</div>
+                </div><br>
+
+                <div class="checkboxdivs">
+                    <input type="checkbox" formControlName="checkbox2" class="checkboxinput">
+                    <div class="checkboxtext">Ship to a different address ?</div>
+                </div><br>
+
+                <div>
+                    <input type="text" formControlName="notes" placeholder="Oder notes" class="allimputs">
+                </div> <br>
+
+            </div>
+        </div>
+
+
+        <div class="yourorder">
+
+            <div class="yourorderdiv">Your Order</div>
+
+            <div class="orders" *ngFor="let order of orders">
+
+                <div class="prodtotal">
+                    <div class=" product"> PRODUCT</div>
+                    <div class="total">TOTAL</div>
+                </div> <br>
+                <div class="list">
+                    <ul class="list-unstyled">
+                        <li class="prodtotal" *ngFor="let product of products">
+                            <div>{{product.name}}</div>
+                            <div>{{product.price | currency:"$"}}</div>
+                        </li><br><br><br>
+                    </ul>
+                </div>
+
+                <div class="prodtotal subtotal">
+                    <div class="subtotalcolor">SUBTOTAL</div>
+            <div class="totalcolor">{{order.subtotal|currency: "$"}}</div> 
+                </div>
+
+                <div class="prodtotal subtotal" *ngFor="let order of orders">
+                    <div class="subtotalcolor">SHIPPING</div>
+                    <div class="totalcolor">{{order.shipping}}</div>
+                </div>
+
+                <div class=" prodtotal lasttotal">
+                    <div class="subtotalcolor">TOTAL</div>
+                    <div>{{order.total | currency:"$"}}</div>
+                </div>
+
+                <div class="transfer">
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" 
+                            checked>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Direct bank transfer
+                        </label>
+                        <div class="transfertext">Make your payment directly into our bank account. Pleasc use Order
+                            ID as the payment
+                            reference, </div>
+                    </div> <br>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Check payments
+                        </label>
+                    </div><br>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Cash on deliver
+                        </label>
+                    </div><br>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                           PayPal
+                        </label>
+                    </div> <br><br>
+
+                    <button type="submit" class="btn btn-dark btnsignin" (click)="placeOrder()">PLACE ORDER</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

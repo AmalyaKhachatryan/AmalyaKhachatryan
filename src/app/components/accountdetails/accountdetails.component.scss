@@ -1,0 +1,104 @@
+@import "../../colors.scss";
+
+.container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.listline {
+    margin-top: 40px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    font-weight: 100;
+}
+
+.dashboard,
+.orders,
+.downloads,
+.adresses,
+.accountdetails,
+.logout {
+    padding:7px;
+    border: none;
+    background-color: transparent;
+    border-bottom: solid 1px;
+    border-color: $gray;
+    padding-bottom: 25px;
+    color: $dark-gray;
+
+    &:hover {
+        color: $black;
+    }
+
+    &.active {
+        border-bottom-color: $black;
+        color: $black;
+        font-weight: 550;
+    }
+}
+
+.dashboard {
+    padding-left: 0%;
+}
+
+
+.accountdetails {
+    border-bottom: solid $black 1,5px;
+    border-bottom-color: $black;
+    color: $black;
+    font-weight: 550;
+}
+
+
+
+.accdetails {
+    font-size: 33px;
+    margin-top: 7vh;
+}
+
+.inputsdiv {
+    width: 50%;
+}
+
+.allimputs {
+    width: 100%;
+    border: none;
+    padding: 5px;
+    font-size: 14px;
+    border-bottom: solid 1px;
+    border-color: $gray;
+}
+
+.info {
+    font-size: 12px;
+    text-align: left;
+}
+
+.paschange {
+    font-size: 16px;
+    font-weight: 700;
+    text-align: left;
+}
+
+.btnsignin {
+    width: 100%;
+    font-size: 16px;
+
+}
+
+
+@media only screen and (max-width: 576px) {
+
+    .inputsdiv {
+        width: 100%;
+    }
+
+    .accdetails {
+      display: none;
+    }
+    
+}

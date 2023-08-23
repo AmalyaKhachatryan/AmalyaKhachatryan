@@ -1,0 +1,316 @@
+@import "../../colors.scss";
+
+.container {
+    text-align: center;
+    font-weight: bold;
+    font-size: 33px;
+    margin-top: 30px;
+
+}
+
+.listline {
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    font-weight: 100;
+    margin-top: 50px;
+overflow: scroll;
+    .buttonpr, .buttonnext {
+        border: none;
+        background-color: transparent;
+        display: none;
+        padding-top: 5px;
+        padding-right: 5%;
+        padding-left: 4px;
+        border-bottom: solid 1px;
+        border-color: $gray;
+
+    }
+}
+
+
+.dashboard,
+.orders,
+.downloads,
+.adresses,
+.accountdetails,
+.logout {
+    padding: 4px;
+    border: none;
+    background-color: transparent;
+    border-bottom: solid 1px;
+    border-color: $gray;
+    padding-bottom: 25px;
+    padding-right: 2%;
+    padding-left: 2%;
+    color: $dark-gray;
+
+    &:hover {
+        color: $black;
+    }
+
+    &.active {
+        border-bottom-color: $black;
+        color: $black;
+        font-weight: 550;
+    }
+}
+
+.dashboard {
+    padding-left: 0%;
+}
+
+.dashboard.active {
+    border-bottom: solid $black 1, 5px;
+}
+
+.orders.active {
+    border-bottom: solid $black 1, 5px;
+}
+
+.downloads.active {
+    border-bottom: solid $black 1, 5px;
+}
+
+.adresses.active {
+    border-bottom: solid $black 1, 5px;
+}
+
+
+
+.text {
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
+    margin-top: 25px;
+}
+
+.textdiv {
+    margin-bottom: 25px;
+
+
+}
+
+.links {
+    color: $accent;
+}
+
+.noorder {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    background-color: $gray;
+    padding: 15px;
+    border-top: solid 2px;
+    border-color: $accent;
+
+}
+
+.brows {
+    color: $accent;
+    font-weight: bold;
+}
+
+.tablrow {
+    border-bottom: solid 1px;
+    font-size: 16px;
+    font-weight: 400px;
+}
+
+#orders {
+    width: 100%;
+}
+
+#orders th {
+    text-align: left;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+#orders td {
+    text-align: left;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: solid 1px;
+    border-color: $gray;
+}
+
+
+.tablrow2 {
+    font-size: 16px;
+    font-weight: 400px;
+    height: 45px;
+}
+
+
+#orders2,
+#orders2downliad {
+    display: none;
+
+}
+
+#orders2 td {
+    width: 40%;
+    text-align: right;
+    font-size: 14px;
+}
+
+#orders2 th {
+    width: 84%;
+    font-size: 14px;
+}
+
+#orders2downliad td {
+    width: 53%;
+    text-align: right;
+    font-size: 14px;
+}
+
+#orders2downliad th {
+    width: 73%;
+    font-size: 14px;
+}
+
+
+.color {
+    color: $accent;
+}
+
+
+.addresses {
+    display: flex;
+    flex-direction: row;
+}
+
+.addresstext {
+    font-size: 16px;
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+
+.adresdivs {
+    width: 50%;
+    font-size: 20px;
+}
+
+.add {
+    font-size: 16px;
+    color: $accent;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: none;
+    background-color: transparent;
+}
+
+.info {
+    font-size: 14px;
+    color: $dark-gray;
+    font-weight: 400;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 15%;
+}
+
+.namesinputs {
+    width: 100%;
+    border: none;
+    padding: 5px;
+    font-size: 16px;
+    border-bottom: solid 1px;
+    border-color: $gray;
+}
+
+.allimputs {
+    width: 85%;
+    margin-right: 15%;
+    border: none;
+    padding: 5px;
+    font-size: 16px;
+    border-bottom: solid 1px;
+    border-color: $gray;
+    color: #757575;
+
+}
+
+.btnsignin {
+    font-size: 16px;
+}
+
+
+
+
+@media only screen and (max-width: 576px) {
+
+
+    #orders {
+        display: none;
+    }
+
+    #orders2,
+    #orders2downliad {
+        display: block;
+
+    }
+
+    .dashboard,
+    .orders,
+    .downloads,
+    .adresses,
+    .accountdetails,
+    .logout {
+        font-size: 18px;
+        padding-right: 1%;
+        padding-left:1% ;
+    }
+
+    .listline {
+        font-size: 18px;
+        padding-left: 0px;
+        padding-right: 0px;
+        width: 440%;
+
+        .buttonpr, .buttonnext{
+            display: block;
+            padding-right: 2%;
+        }
+        .buttonnext  {
+           padding-left: 2%;
+        }
+    
+    }
+    .container {
+      
+        font-size: 20px;
+     
+    }
+
+    .text {
+        font-size: 14px;
+      
+    }
+
+    .addresses {
+        flex-direction: column;
+    }
+    
+    .addresstext {
+        font-size: 12px;
+      
+    }
+    .adresdivs {
+        width: 100%;
+        font-size: 16px;
+    }
+    
+    .btnsignin {
+        font-size: 12px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+}
+

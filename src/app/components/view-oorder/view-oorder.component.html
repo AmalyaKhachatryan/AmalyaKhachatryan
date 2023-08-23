@@ -1,0 +1,100 @@
+
+
+<div class="text-center text-md-start footerclass">
+ 
+
+    <div class="container p-4">
+
+        <div class="orderreceved">
+            <div class="img"><img src="../../../assets/Icon color (2).png" alt=""></div>
+           <div> We've received your order</div>
+        </div>
+         
+        
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 order">Order Details</div>
+            <div class="col-lg-6 col-md-6 col-sm-12 orderSum">Order Summary</div>
+        </div> <br> <br>
+
+
+
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-6 ">
+
+                <ul class="list-unstyled" *ngFor='let product of products'>
+                    <li class="li">
+                        <div class="text infos">ORDER NUMBER</div>
+                        <div class="orderinfo">{{product.ordernumber}}</div>
+                    </li> <br>
+
+                    <li class="li">
+                        <div class="text infos">EMAIL </div>
+                        <div class="orderinfo">{{product.email}}</div>
+                    </li> <br>
+
+                    <li class="li">
+                        <div class="text infos"> PAYMENT METHODE </div>
+                        <div class="orderinfo">{{product. paymentMethod}}</div>
+                    </li><br>
+
+                    <li class="li">
+                        <div class="text infos"> ORDER DATE </div>
+                        <div class="orderinfo">{{product.date}}</div>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="col-lg-3 col-md-3 col-6" *ngFor='let product of products'>
+
+                <ul class="list-unstyled">
+                    <li class="li">
+                        <div class="text infos">DELIVERY OPTIONS</div>
+                        <div class="orderinfo">{{product.delivery}}</div>
+                    </li><br>
+
+                    <li class="li">
+                        <div class="text infos">DELIVERY ADDRESS</div>
+                        <div class="orderinfo">{{product.adress}} </div>
+                    </li><br>
+                    <li class="li">
+                        <div class="text infos">CONTACT NUMBER</div>
+                        <div class="orderinfo">{{product.contactNomber}}</div>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="orderSummary">Order Summary</div>
+            <div class="col-lg-6 col-md-6 col-sm-12 right" *ngFor='let product of products'>
+                <div class="prodtotal">
+                    <div class=" product"> PRODUCT</div>
+                    <div class="total">TOTAL</div>
+                </div>
+                <div class="list">
+                    <ul class="list-unstyled">
+                        <li class="prodtotal" *ngFor="let elems of  elems">
+                            <div>{{elems.name}}</div>
+                            <div>{{elems.price | currency:"$"}}</div>
+                        </li><br><br><br>
+                    </ul>
+                </div>
+                <div class="prodtotal subtotal">
+                    <div class="subtotalcolor">SUBTOTAL</div>
+                    <div class="totalcolor">{{product.subtotal|currency: "$"}}</div>
+                </div>
+
+                <div class="prodtotal subtotal">
+                    <div class="subtotalcolor">SHIPPING</div>
+                    <div class="totalcolor">{{product.shipping}}</div>
+                </div>
+
+                <div class=" prodtotal lasttotal">
+                    <div class="subtotalcolor">TOTAL</div>
+                    <div>{{product.total | currency:"$"}}</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

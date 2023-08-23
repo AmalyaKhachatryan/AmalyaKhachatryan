@@ -1,0 +1,135 @@
+@import "../../colors.scss";
+
+.orderreceved{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: $gray;
+    display: flex;
+    padding: 7px;
+    border-top: solid 2px;
+    border-color: $accent;
+    font-size: 16px;
+}
+.img{
+margin-right: 2%;
+margin-left: 2%;
+}
+
+.order {
+    font-weight: bold;
+    font-size: 26px;
+}
+
+.orderSum {
+    font-weight: bold;
+    font-size: 26px;
+}
+
+.right {
+    background-color: $gray;
+    padding: 5vh
+}
+
+.orderSummary {
+    font-weight: bold;
+    font-size: 26px;
+    margin-top: 5vh;
+    display: none;
+}
+
+.li{
+margin-bottom: 5vh;
+}
+
+.infos {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.orderinfo {
+    margin-top: 7px;
+}
+
+.prodtotal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.product {
+    font-weight: bold;
+    margin-bottom: 2vh;
+
+}
+
+.total {
+    font-weight: bold;
+
+}
+
+.prodli {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.list {
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-color: rgb(182, 180, 180);
+    opacity: 0.7;
+}
+
+.subtotal {
+    border-bottom: 1px solid;
+    border-color: rgb(182, 180, 180);
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+
+}
+
+.subtotalcolor {
+    font-weight: bold;
+}
+
+
+.totalcolor {
+    opacity: 0.7;
+}
+
+.lasttotal {
+    padding-top: 10px;
+    font-weight: bold;
+}
+
+
+@media only screen and (max-width: 767px) {
+    .orderSum {
+        display: none;
+    }
+
+    .orderSummary {
+        display: block;
+    }
+
+    .product {
+        text-align: left;
+    }
+
+    .total {
+        text-align: left;
+        margin-bottom: 2vh;
+    }
+
+    .infos {
+        text-align: left;
+    }
+
+    .orderinfo {
+        text-align: left;
+    }
+
+   
+    
+}

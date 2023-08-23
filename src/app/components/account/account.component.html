@@ -1,0 +1,208 @@
+<div class="container">
+
+    <div *ngIf="tab===1">My Account</div>
+
+    <div class="listline" >
+        <div class="buttonpr slides" (click)="goToPrevious()"> < </div>
+        <div class="dashboard slides" (click)="tab=1" [class.active]="tab===1">Dashboard</div>
+        <div class="orders slides" (click)="tab=2" [class.active]="tab===2">Orders</div>
+        <div class="downloads slides" (click)="tab=3" [class.active]="tab===3">Downloads</div>
+        <div class="buttonnext" (click)="goToNext()"> > </div>
+        <div class="adresses slides" (click)="tab=4" [class.active]="tab===4">Adresses</div>
+        <div class="accountdetails slides" (click)="tab=5" routerLink="/accountdetails">Account details</div>
+        <div class="logout slides" routerLink="/myaccount">Logout</div>
+    </div>
+
+ 
+       <div class="text" *ngIf="tab===1">
+
+        <div class="textdiv">Hello Vitatheme (not Vitathem? <span class="links" routerLink="/myaccount">Log
+                out</span>)
+        </div>
+        <div>From your account deshboard you can viw your <span class="links">recent orders</span>, manage your
+            <span class="links">shipping and billing addresses</span>, and edit your <span>password and account
+                details.</span>
+        </div>
+    </div>
+
+
+
+    <div class="text" *ngIf="tab===2">
+
+        <div class="textdiv noorder" *ngIf="orders.length==0">
+            <div>No order has been made yet. </div>
+            <div class="brows"> BROWSE PRODUCT</div>
+        </div>
+
+        <table id="orders" *ngFor='let order of orders'>
+            <tr class="tablrow">
+                <th>ORDER NUMBER</th>
+                <th>DATE</th>
+                <th>STATUS</th>
+                <th>TOTAL</th>
+                <th>ACTIONS</th>
+            </tr>
+            <tr>
+                <td>{{order.ordernumber}}</td>
+                <td>{{order.date}}</td>
+                <td>{{order.status}}</td>
+                <td>{{order.total | currency: "$"}}</td>
+                <td class="color" routerLink="/viewOrder">{{order.action1}}</td>
+            </tr>
+        </table>
+
+
+        <table id="orders2" *ngFor='let order of orders'>
+            <tr class="tablrow2">
+                <th>ORDER NUMBER</th>
+                <td>{{order.ordernumber}}</td>
+            </tr>
+
+            <tr class="tablrow2">
+                <th>DATE</th>
+                <td>{{order.date}}</td>
+            </tr>
+
+            <tr class="tablrow2">
+                <th>STATUS</th>
+                <td>{{order.status}}</td>
+            </tr>
+
+            <tr class="tablrow2">
+                <th>TOTAL</th>
+                <td>{{order.total | currency: "$"}}</td>
+            </tr>
+
+            <tr class="tablrow2">
+                <th>ACTIONS</th>
+                <td class="color" routerLink="/viewOrder">{{order.action1}}</td>
+            </tr>
+
+        </table>
+
+
+
+    </div>
+
+    <div class="text" *ngIf="tab===3">
+
+        <div class="textdiv noorder" *ngIf="orders.length==0">
+            <div>No downloads available yet. </div>
+            <div class="brows"> BROWSE PRODUCT</div>
+        </div>
+
+        <table id="orders" *ngFor='let order of orders'>
+            <tr class="tablrow">
+                <th>ORDER NUMBER</th>
+                <th>DATE</th>
+                <th>STATUS</th>
+                <th>TOTAL</th>
+                <th>ACTIONS</th>
+            </tr>
+            <tr>
+                <td>{{order.ordernumber}}</td>
+                <td>{{order.date}}</td>
+                <td>{{order.status}}</td>
+                <td>{{order.total | currency: "$"}}</td>
+                <td class="color" routerLink="/viewOrder"> {{order.action1}} | <span routerLink="/shoppingBag">
+                        {{order.action2}} </span> </td>
+            </tr>
+        </table>
+
+
+        <table id="orders2downliad" *ngFor='let order of orders'>
+            <tr class="tablrow2">
+                <th>ORDER NUMBER</th>
+                <td>{{order.ordernumber}}</td>
+            </tr>
+
+            <tr class="tablrow2">
+                <th>DATE</th>
+                <td>{{order.date}}</td>
+            </tr>
+
+            <tr class="tablrow2">
+                <th>STATUS</th>
+                <td>{{order.status}}</td>
+            </tr>
+
+            <tr class="tablrow2">
+                <th>TOTAL</th>
+                <td>{{order.total | currency: "$"}}</td>
+            </tr>
+
+            <tr class="tablrow2 tablrow2downloads">
+                <th>ACTIONS</th>
+                <td class="color" routerLink="/viewOrder"> {{order.action1}} | <span routerLink="/shoppingBag">
+                        {{order.action2}} </span> </td>
+            </tr>
+
+        </table>
+
+    </div>
+
+
+
+    <div class="text" *ngIf="tab===4">
+        <div class="addresstext">The fellowing addresses will be used on the checkout page by default.</div>
+
+        <div class="addresses">
+            <div class=" adresdivs" [formGroup]=" adressForm">
+                <div>Billing address</div>
+                <div *ngIf="addressDiv===1">
+                    <button class="add" (click)="addressDiv=2">ADD</button>
+                    <div class="info">You have not set up this type of address yet</div>
+                </div> <br>
+
+
+                <div id="billingaddress" class="billingaddress" *ngIf="addressDiv===2">
+                    <div class="inputs">
+                        <div> <input type="text" formControlName="FirstName" class="namesinputs"
+                                placeholder="First name*">
+                        </div>
+                        <div><input type="text" formControlName="LastName" class="namesinputs" placeholder="last name*">
+                        </div>
+                    </div> <br>
+                    <div>
+                        <input type="text" formControlName="CompanyName" placeholder="Company Name*" class="allimputs">
+                    </div> <br>
+                    <div class="country" >
+                        <select class="allimputs" name="country" id="country" >
+                            <option  value="" disabled selected class="country" >Country*</option>
+                            <option *ngFor="let country of countries" [value]="country.name">{{country.name}} 
+                            </option>
+                        </select>
+                    </div> <br>
+
+                    <div>
+                        <input type="text" formControlName="StreetAdress" placeholder="Street Address*"
+                            class="allimputs">
+                    </div> <br>
+                    <div>
+                        <input type="text" formControlName="Postcode" placeholder="Postcode / ZIP*" class="allimputs">
+                    </div> <br>
+                    <div>
+                        <input type="text" formControlName="Town" placeholder="Town / City*" class="allimputs">
+                    </div> <br>
+                    <div>
+                        <input type="text" formControlName="Phone" placeholder="Phone*" class="allimputs">
+                    </div> <br>
+                    <div>
+                        <input type="text" formControlName="Email" placeholder="Email*" class="allimputs">
+                    </div> <br>
+
+                    <button type="button" class="btn btn-dark btnsignin" (click)="saveAdress()">SAVE
+                        ADDRESS</button>
+                </div>
+            </div>
+
+
+            <div class=" adresdivs">
+                <div>Shipping address</div>
+                <div>
+                    <button class="add">ADD</button>
+                    <div class="info">You have not set up this type of address yet</div>
+                </div>
+            </div>
+        </div>
+    </div>

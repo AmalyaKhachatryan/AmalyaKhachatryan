@@ -1,0 +1,60 @@
+<div class="container" [formGroup]=" accountForm">
+
+ 
+    <div class="listline">
+        <!-- <button class="buttons"> < </button> -->
+                <div class="dashboard" (click)="tab=1" routerLink="/account">Dashboard</div>
+                <div class="orders" (click)="tab=2" routerLink="/account">Orders</div>
+                <div class="downloads" (click)="tab=3"routerLink="/account">Downloads</div>
+                <!-- <button class="buttons"> > </button> -->
+                <div class="adresses" (click)="tab=4" routerLink="/account">Adresses</div>
+                <div class="accountdetails" (click)="tab=5" [class.active]="tab===5">Account details</div>
+                <div class="logout" routerLink="/myaccount">Logout</div>
+    </div>
+
+
+    <p class="accdetails">Account details</p> <br>
+
+    <div class="inputsdiv">
+        <div>
+            <input type="text" formControlName="FirstName" placeholder="First name" class="allimputs">
+        </div> <br>
+        <div>
+            <input type="text" formControlName="LastName" placeholder="Last name" class="allimputs">
+        </div> <br>
+        <div>
+            <input type="text" formControlName="DisplayName" placeholder="Display name" class="allimputs">
+        </div> <br>
+        <div class="info">This will be how your name will be diaplayed in the account section and in reviews.</div>
+        <div><br> <br>
+            <input type="text" formControlName="EmailAddress" placeholder="Email address" class="allimputs">
+        </div> <br> <br>
+
+
+
+        <p class="paschange">Password change</p> <br>
+
+        <div>
+            <input type="text" formControlName="currentPassword" placeholder="Current password (leav blank to leaveunchanged)" class="allimputs">
+        </div> <br>
+        <div>
+            <input type="text" formControlName="newPassword" placeholder="New password (leave blank to leave unchanged)" class="allimputs">
+        </div> <br>
+        <div>
+            <input type="text" formControlName="confirmNewPassword" placeholder="Confirm new password" class="allimputs">
+        </div> <br> <br>
+        
+
+
+        <button type="button" class="btn btn-dark btnsignin" (click)="saveChanges()">SAVE CHANGES</button>     
+
+
+       
+
+
+
+    </div>
+
+
+
+  

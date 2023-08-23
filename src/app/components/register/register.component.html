@@ -1,0 +1,38 @@
+<div class="container">
+
+
+    <div class="myaccount"> My account</div>
+    <div class="signinregisterbtns">
+        <button class="btn" routerLink="/myaccount">Sign in</button>
+        <button class="btn" (click)="register()" [disabled]="!users.email || !users.password"> Register</button>
+    </div>
+
+    <div class="inputssdiv" [formGroup]="profileForm">
+        <input type="text" name="firstname" placeholder="First name*" id="firstname" class="inputs" formControlName="firstname"> 
+        <br>
+        <input type="text" name="lastname" placeholder="Last name*" class="inputs" formControlName="lastname"> 
+        <br>
+        <input type="text" name="displayname" placeholder="Display name*" class="inputs" formControlName="displayname"> <br>
+        <div class="emaildiv">
+            <div class="icon">
+                <img src="../../../assets/Icon color.png" alt="" (click)="deletei()">
+            </div>
+            <div class="emailimput"> 
+                <input type="email" name="email" placeholder="Email*" class="inputs" formControlName="email">
+            </div>
+        </div>
+        <br>
+
+
+        <input type="password" placeholder="Password*" name="password" class="inputs" formControlName="password">
+       
+        
+        <input type="checkbox" class="check" formControlName="checkbox"> <br><br>
+
+        <div *ngIf="profileForm.status==='INVALID'" class="required"> Complete the form to enable button</div> 
+        <button type="submit" [disabled]="!profileForm.valid" class="btn btn-dark btnsignin" (click)="register()">Register</button>
+        <br>
+        <div class="forgottenpass" routerLink="/resetpassword">Have you forgotten your password?</div>
+
+    </div>
+</div>

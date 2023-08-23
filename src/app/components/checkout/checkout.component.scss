@@ -1,0 +1,185 @@
+@import "../../colors.scss";
+
+.checkout {
+    text-align: center;
+    font-weight: bold;
+    font-size: 33px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.linktexsts {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: $dark-gray;
+}
+
+.coupondiv {
+    border: solid 1px;
+    border-color: $gray;
+    padding: 3%;
+    width: 50%;
+
+  
+
+    .cupinput {
+        border: transparent;
+        border-bottom: solid 1px;
+        border-color: $gray;
+        margin-right: 5%;
+        width: 65%;
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    .btn {
+        border-radius: 4px;
+    }
+}
+
+.buttomsections {
+    display: flex;
+    flex-direction: row;
+}
+
+#clickhere {
+    color: black;
+    font-weight: 700;
+  }
+
+
+.buillingdetailsdiv {
+    width: 60%;
+
+    .buillingdetails {
+        font-weight: bold;
+        font-size: 26px;
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+
+    .inputs {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-right: 15%;
+    }
+
+    .namesinputs {
+        width: 100%;
+        border: none;
+        padding: 5px;
+        font-size: 16px;
+        border-bottom: solid 1px;
+        border-color: $gray;
+    }
+
+    .allimputs {
+        width: 85%;
+        margin-right: 15%;
+        border: none;
+        padding: 5px;
+        font-size: 16px;
+        border-bottom: solid 1px;
+        border-color: $gray;
+        color: #757575;
+    }
+
+}
+
+
+.checkboxdivs {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.checkboxtext {
+    font-size: 16px;
+    margin-left: 2%;
+}
+
+
+
+.yourorder {
+    width: 40%;
+
+}
+
+.yourorderdiv {
+    font-weight: bold;
+    font-size: 26px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.orders {
+    background-color: $gray;
+    padding: 7%;
+}
+
+
+
+.prodtotal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.product {
+    font-weight: bold;
+    margin-bottom: 2vh;
+}
+
+.total {
+    font-weight: bold;
+}
+
+.prodli {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.list {
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-color: rgb(182, 180, 180);
+    opacity: 0.7;
+}
+
+.subtotal {
+    border-bottom: 1px solid;
+    border-color: rgb(182, 180, 180);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.subtotalcolor {
+    font-weight: bold;
+}
+
+
+.totalcolor {
+    opacity: 0.7;
+}
+
+.lasttotal {
+    padding-top: 10px;
+    font-weight: bold;
+}
+
+
+.transfer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+
+
+    .transfertext {
+        font-size: 12px;
+        margin-top: 10px;
+
+    }
+}
